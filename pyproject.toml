@@ -1,0 +1,19 @@
+[project]
+name = "cog-voxtral-24b-2507"
+version = "0.1.0"
+description = "Cog implementation of Voxtral-Small-24B-2507"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "cog>=0.16.1",
+    "huggingface-hub[cli]>=0.34.3",
+    "mistral-common[audio]>=1.8.3",
+    "torch>=2.7.1",
+    "transformers>=4.54.1",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.17.0",
+    "ruff>=0.12.7",
+]
