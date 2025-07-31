@@ -8,10 +8,10 @@ REPO_ID = "mistralai/Voxtral-Small-24B-2507"
 
 class Predictor(BasePredictor):
     def setup(self):
-        self.processor = AutoProcessor.from_pretrained(
+        self.processor = AutoProcessor.from_pretrained(REPO_ID)
+        self.model = VoxtralForConditionalGeneration.from_pretrained(
             REPO_ID, torch_dtype=torch.bfloat16, device_map=DEVICE
         )
-        self.model = VoxtralForConditionalGeneration.from_pretrained(REPO_ID)
         self.model.to(DEVICE)
 
     def predict(
