@@ -13,6 +13,12 @@ attrs==23.2.0
     #   cog
     #   jsonschema
     #   referencing
+audioop-lts==0.2.1
+    # via
+    #   standard-aifc
+    #   standard-sunau
+audioread==3.0.1
+    # via librosa
 certifi==2025.7.14
     # via requests
 cffi==1.17.1
@@ -23,6 +29,8 @@ click==8.2.1
     # via uvicorn
 cog==0.16.1
     # via cog-voxtral-24b-2507 (pyproject.toml)
+decorator==5.2.1
+    # via librosa
 fastapi==0.115.14
     # via cog
 filelock==3.18.0
@@ -54,22 +62,41 @@ inquirerpy==0.3.4
     # via huggingface-hub
 jinja2==3.1.6
     # via torch
+joblib==1.5.1
+    # via
+    #   librosa
+    #   scikit-learn
 jsonschema==4.25.0
     # via mistral-common
 jsonschema-specifications==2025.4.1
     # via jsonschema
+lazy-loader==0.4
+    # via librosa
+librosa==0.11.0
+    # via cog-voxtral-24b-2507 (pyproject.toml)
+llvmlite==0.44.0
+    # via numba
 markupsafe==3.0.2
     # via jinja2
 mistral-common==1.8.3
     # via cog-voxtral-24b-2507 (pyproject.toml)
 mpmath==1.3.0
     # via sympy
+msgpack==1.1.1
+    # via librosa
 networkx==3.5
     # via torch
-numpy==2.3.2
+numba==0.61.2
+    # via librosa
+numpy==2.2.6
     # via
+    #   cog-voxtral-24b-2507 (pyproject.toml)
     #   accelerate
+    #   librosa
     #   mistral-common
+    #   numba
+    #   scikit-learn
+    #   scipy
     #   soundfile
     #   soxr
     #   transformers
@@ -77,11 +104,17 @@ packaging==25.0
     # via
     #   accelerate
     #   huggingface-hub
+    #   lazy-loader
+    #   pooch
     #   transformers
 pfzy==0.3.4
     # via inquirerpy
 pillow==11.3.0
     # via mistral-common
+platformdirs==4.3.8
+    # via pooch
+pooch==1.8.2
+    # via librosa
 prompt-toolkit==3.0.51
     # via inquirerpy
 psutil==7.0.0
@@ -122,6 +155,7 @@ requests==2.32.4
     #   cog
     #   huggingface-hub
     #   mistral-common
+    #   pooch
     #   tiktoken
     #   transformers
 rpds-py==0.26.0
@@ -132,6 +166,12 @@ safetensors==0.5.3
     # via
     #   accelerate
     #   transformers
+scikit-learn==1.7.1
+    # via librosa
+scipy==1.16.1
+    # via
+    #   librosa
+    #   scikit-learn
 sentencepiece==0.2.0
     # via mistral-common
 setuptools==80.9.0
@@ -139,15 +179,28 @@ setuptools==80.9.0
 sniffio==1.3.1
     # via anyio
 soundfile==0.13.1
-    # via mistral-common
+    # via
+    #   cog-voxtral-24b-2507 (pyproject.toml)
+    #   librosa
+    #   mistral-common
 soxr==0.5.0.post1
-    # via mistral-common
+    # via
+    #   librosa
+    #   mistral-common
+standard-aifc==3.13.0
+    # via librosa
+standard-chunk==3.13.0
+    # via standard-aifc
+standard-sunau==3.13.0
+    # via librosa
 starlette==0.46.2
     # via fastapi
 structlog==24.4.0
     # via cog
 sympy==1.14.0
     # via torch
+threadpoolctl==3.6.0
+    # via scikit-learn
 tiktoken==0.9.0
     # via mistral-common
 tokenizers==0.21.4
@@ -167,6 +220,7 @@ typing-extensions==4.14.1
     #   cog
     #   fastapi
     #   huggingface-hub
+    #   librosa
     #   mistral-common
     #   pydantic
     #   pydantic-core
